@@ -19,3 +19,16 @@ print(agrupado['Fumador'].mean())
 print("-+-+-+- Nivel de riesgo maximo a pacientes -+-+-+-")
 # Nivel de riesgo maximo a pacientes
 print(agrupado['Nivel_Riesgo'].max())
+print("-+-Meredith+-+- Segunda Parte -+-0013+-+-")
+print("Agregaciones múltiples")
+print("mean --> promedio, sum --> suma")
+print("max --> maximo, min --> minimo")
+# Multiples funciones de agregado
+agregar_resultado = agrupado ['Fumador'].agg(['mean', 'sum', 'max', 'min'])
+print(agregar_resultado)
+print("Agrupación por varias columnas")
+print("Agrega columna dxe DataFrame")
+print("Columna Team --> Equipo")
+df['Equipo'] = ['A','B','A','B','A','B']
+agrupado_múltiple = df.groupby(['Presion_Arterial', 'Equipo'])['Fumador'].mean()
+print(agrupado_múltiple)
